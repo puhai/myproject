@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+ <head>
+  <title> new document </title>
+  <meta charset="utf-8"/>
+  <script>
+	//window.open();打开新连接
+	function fun1(){//在当前窗口打开，可以后退
+		/*window.*/open("http://www.baidu.com","_self");
+		//					href               target
+	}
+	function fun2(){//在当前窗口打开，禁止后退
+		//使用新连接 替换旧链接
+		location.replace("http://www.baidu.com");
+		//当前窗口正在打开的url
+		//只能在当前窗口打开
+	}
+	function fun3(){
+		/*window.*/open("http://www.baidu.com"/*,"_blank"*/);
+		//									可以省略_blank,默认值_blank
+		}
+	function fun4(){
+		/*window.*/open("http://www.baidu.com","baidu"/*存在于内存中 不可见*/);
+	}
+  </script>
+ </head>
+
+ <body>
+  <a href="http://www.baidu.com" target="_self">1在当前窗口打开，可以后退</a><br>
+  <a href="javascript:fun1()" >1在当前窗口打开，可以后退</a><br>
+  <a href="javascript:fun2()">2在当前窗口打开，不可以后退</a><br>
+  <a href="http://www.baidu.com" target="_blank">3在新窗口打开，可以打开多个</a><br> 
+  <a href="javascript:fun3()">3在新窗口打开，可以打开多个</a><br> 
+  <a href="http://www.baidu.com" target="baidu">4在新窗口打开，只能打开一个</a><br>
+  <a href="javascript:fun4()">4在新窗口打开，只能打开一个</a><br>
+
+ </body>
+</html>
